@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gap_standard_16dp">16dp</dimen>
+    <dimen name="header_size_20sp">20sp</dimen>
+    <dimen name="data_size_32sp">32sp</dimen>
+    <dimen name="gap_half_8dp">8dp</dimen>
+</resources>
