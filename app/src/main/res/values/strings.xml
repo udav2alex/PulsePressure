@@ -2,4 +2,8 @@
     <string name="app_name">Pulse &amp; Pressure</string>
     <string name="add_new_record">Add new record</string>
     <string name="delimiter">/</string>
+    <string name="systolic_pressure">Systolic pressure</string>
+    <string name="diastolic_pressure">Diastolic pressure</string>
+    <string name="pulse">Pulse</string>
+    <string name="commit">Commit</string>
 </resources>
