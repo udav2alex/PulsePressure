@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import ru.gressor.pulsepressure.databinding.FragmentEditorBinding
 import ru.gressor.pulsepressure.entities.Record
 import ru.gressor.pulsepressure.ui.BaseFragment
+import java.text.SimpleDateFormat
 import java.util.*
 
 class EditorFragment : BaseFragment<FragmentEditorBinding>() {
@@ -15,6 +16,10 @@ class EditorFragment : BaseFragment<FragmentEditorBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         listener = context as? SubmitRecordListener
 
+        val date = Date()
+        val df = SimpleDateFormat("d MMMM yyyy, HH:mm", Locale.getDefault())
+        binding.dateTimeTextView.text = df.format(date)
+
         binding.commitButton.setOnClickListener {
             try {
                 val sys = binding.systolicEditText.text.toString().toInt()
@@ -22,7 +27,7 @@ class EditorFragment : BaseFragment<FragmentEditorBinding>() {
                 val pulse = binding.pulseEditText.text.toString().toInt()
 
                 listener?.submitRecord(
-                    Record(Date().time, sys, dia, pulse)
+                    Record(date.time, sys, dia, pulse)
                 )
             } catch (e: Throwable) {
                 showError(e)

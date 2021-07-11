@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ru.gressor.pulsepressure.databinding.FragmentMainBinding
 import ru.gressor.pulsepressure.entities.Record
+import ru.gressor.pulsepressure.repository.RecordsRepositoryFirestore
 import ru.gressor.pulsepressure.repository.RecordsRepositoryStub
 import ru.gressor.pulsepressure.ui.BaseFragment
 import ru.gressor.pulsepressure.vm.MainViewModel
@@ -20,7 +21,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(
             this, MainViewModelFactory(
-                RecordsRepositoryStub()
+                RecordsRepositoryFirestore() // RecordsRepositoryStub()
             )
         ).get(MainViewModel::class.java)
     }
